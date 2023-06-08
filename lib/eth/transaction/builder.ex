@@ -123,9 +123,9 @@ defmodule ETH.Transaction.Builder do
         fn ->
           ETH.estimate_gas!(%{
             to: to,
-            value: value,
+            value:  "0x" <> Hexate.encode(value),
             data: target_data,
-            nonce: nonce,
+            nonce:  "0x" <> Hexate.encode(nonce),
             chain_id: chain_id
           })
         end
